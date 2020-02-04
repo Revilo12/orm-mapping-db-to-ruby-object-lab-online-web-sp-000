@@ -3,7 +3,10 @@ class Student
 
   def self.new_from_db(row)
     # format = [name, grade]
-    self.new(row[0], row[1])
+    student = self.new
+    student.name = row[0]
+    student.grade = row[1]
+    student
   end
 
   def self.all
